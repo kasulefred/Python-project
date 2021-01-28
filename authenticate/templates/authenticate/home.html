@@ -1,0 +1,75 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="section">
+<h1>Registered successfully<br><small>Your information</small></h2>
+<div class="reg_info">
+	<p>Name: {{ user.first_name }} {{ user.last_name }}</p>
+	<p>Username: {{ user.username}}</p>
+	<p>MUBS Email: {{ user.email }}</p>
+	<p>Reg Numer: {{ user.Reg_number}}</p>
+	<p>Student Numer: {{ user.student_number}}</p>
+	<p>Corse: {{ user.course_name }}</p>
+	<p>Year of study: {{ user.year_of_study }}</p>
+</div>
+{% else %}
+<div class="intro">
+	<h1> GROUP E</h1>
+	<p>welcome to our students registration site</p>
+	<p>a student can <a href="{% url 'register' %}"> Register</a>, <a href="{% url 'home' %}"> view (after registration)</a>, <del>change </del>information and <a href="{% url 'login' %}">Login</a> & Logout (after login)</p><hr></div>
+	<div class="team">
+		<div class="teams">
+			<h1>AGABA JOSHUA</h1>
+			<p>Registration Number: 18/U/2165/PS </p>
+			<p>Role: Sketch layout, Python </p>
+		</div>
+		<div class="teams">
+			<h1>ATITE BARBARA</h1>
+			<p>Registration Number: 18/U/25829 </p>
+			<p>Role: Front end develop (HTML Build)</p>
+		</div>
+		<div class="teams">
+			<h1>NAKINTU	SHARON</h1>
+			<p>Registration Number: 18/U/41756</p>
+			<p>Role: Front end develop (HTML Build)</p>
+		</div>
+		<div class="teams">
+			<h1>BAYINGANA HENRIETE</h1>
+			<p>Registration Number: 18/U/3530/eve</p>
+			<p>Role: Front end develop (CSS)</p>
+		</div>
+		<div class="teams">
+			<h1>KASULE FRED</h1>
+			<p>Registration Number: 18/U/2723/PS </p>
+			<p>Role: Back end (Python, Django $ db)</p>
+		</div>
+	</div>
+	<div class="tools">
+	<div id="tools">
+	<h1>Tools</h1>
+	<p>We made research from the following sites</p>
+	<ul>
+		<li>&star; GOOGLE</li>
+		<li>&star; PYTHON site</li>
+		<li>&star; YOUTUBE</li>
+		<li>&star; DJANGO DOC</li>
+		<li>&star; GIT HUB</li>
+	</ul>
+	</div>
+	<div id="tools">
+	<p>used the following Apps and Extensions</p>
+	<ul>
+		<li>&star; PIP installs</li>
+		<li>&star; PYTHON</li>
+		<li>&star; Sublime</li>
+		<li>&star; Django</li>
+		<li>&star; Pycham</li>
+		<li>&star; SQL db</li>
+		<li>&star; Google Chrome</li>
+	</ul>
+	</div>
+</div>
+<br><br><br><br>
+{% endif %}
+{% endblock %}

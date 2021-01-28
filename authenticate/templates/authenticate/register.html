@@ -1,0 +1,37 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+
+{% comment %} <h1>&nbsp;</h1> {% endcomment %}
+<div class="section">
+<h2 class="text-center">Register</h2>
+<div class="col-md-6 offset-md-3">
+	<form method="POST" action="{% url 'register' %}">
+		{% csrf_token %}
+
+		{% if form.errors %}
+			<div class="alert">
+            <p>Your Form Has Errors...</p>
+			<p>Check your information please</p>
+            {% for field in form %}
+            	{% if field.errors  %}
+            		{{ field.errors }}
+            	{% endif %}
+
+            {% endfor %}
+
+          </div>
+
+
+		{% endif %}
+		
+       
+			{{ form.as_p }}
+
+		<input type="submit" value="Register" class="btn btn-secondary">
+	</form>
+</div>
+</div>
+<br/><br/><br><br>
+{% endblock %}
+
